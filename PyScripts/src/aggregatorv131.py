@@ -21,7 +21,7 @@ def formatno(no,length):
 
 #the main function
 if __name__ == "__main__":
-    os.chdir("F:/Study2/data-hossein")
+    os.chdir("F:/Study2/data-emm")
     listing = os.listdir(os.getcwd())
     listing.sort();
     outfile = open("aggregate.csv", "wb")

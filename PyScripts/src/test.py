@@ -21,7 +21,7 @@ def formatno(no,length):
 
 #the main function
 if __name__ == "__main__":
-    os.chdir("F:/Study2/data-andy")
+    os.chdir("F:/Study2/battery/battery2")
     listing = os.listdir(os.getcwd())
     for infile in listing:
         if(infile.endswith('.txt')):
