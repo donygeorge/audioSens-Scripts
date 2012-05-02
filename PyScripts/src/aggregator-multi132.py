@@ -21,7 +21,7 @@ def formatno(no,length):
 
 #the main function
 if __name__ == "__main__":
-    os.chdir("F:/Study2/data2-mytouch")
+    os.chdir("F:/Study2/data3-hossein-date1")
     listing = os.listdir(os.getcwd())
     listing.sort();
     
@@ -29,8 +29,10 @@ if __name__ == "__main__":
         print("creating")
         os.makedirs("aggr")
     
+    myList=[1,2,3,5,10,20,30,60]
+    
     seccount=60
-    for index in xrange(1,10):
+    for index in myList:
         print("Run........................................................................"+str(index))
         outfile = open("aggr/aggregate"+str(index)+".csv", "wb")
         wr = csv.writer(outfile, delimiter=',',quoting=csv.QUOTE_MINIMAL)

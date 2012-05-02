@@ -3,6 +3,8 @@ import math
 import os
 import json
 
+#converts data received from SystemLog into csv files
+
 def formatno(no,length):
     i=0
     if(no != 0):
@@ -30,7 +32,7 @@ def print16time(last_hour,last_minute,i):
 
 #the main function
 if __name__ == "__main__":
-    os.chdir("F:/Study2/data2-vibrant")
+    os.chdir("F:/Study2/data3-andy")
     listing = os.listdir(os.getcwd())
     listing.sort();
     

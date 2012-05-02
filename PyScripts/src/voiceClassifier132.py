@@ -183,7 +183,7 @@ def computeGaussianObservationProbability(featureVector,mean_unvoiced,cov_unvoic
 
 #the main function
 if __name__ == "__main__":
-    os.chdir("F:/Study2/data2-vibrant")
+    os.chdir("F:/Study2/data3-andy")
     listing = os.listdir(os.getcwd())
     for infile in listing:
         if(infile.endswith('.csv') and infile.startswith("o")):
