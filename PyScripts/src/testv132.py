@@ -32,7 +32,7 @@ def print16time(last_hour,last_minute,i):
 
 #the main function
 if __name__ == "__main__":
-    os.chdir("F:/Study2/data3-andy")
+    os.chdir("F:/Study2/data3-emm")
     listing = os.listdir(os.getcwd())
     listing.sort();
     

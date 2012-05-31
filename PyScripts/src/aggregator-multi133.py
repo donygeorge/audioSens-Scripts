@@ -22,7 +22,7 @@ def formatno(no,length):
 #the main function
 if __name__ == "__main__":
     os.chdir("F:/Study2") 
-    fileStart="data3"
+    fileStart="data4-xn"
     listing0 = os.listdir(os.getcwd())
     listing0.sort();
     
