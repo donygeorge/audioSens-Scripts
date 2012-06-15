@@ -2,6 +2,7 @@ import csv
 import math
 import os
 import json
+import sys
 
 def formatno(no,length):
     i=0
@@ -19,9 +20,12 @@ def formatno(no,length):
     return out+str(no)
 #enddef
 
-#the main function
-if __name__ == "__main__":
-    os.chdir("F:/Study2/data3-hossein-date1")
+
+def aggr_main_function(folder_name):
+    #if (os.path.isdir(folder_name+"/data") ==0):
+    #    return
+    #os.chdir(folder_name+'/data')
+    os.chdir(folder_name)#temp
     listing = os.listdir(os.getcwd())
     listing.sort();
     outfile = open("aggregate.csv", "wb")
@@ -99,5 +103,13 @@ if __name__ == "__main__":
             f.close()
         #endif to check file type
     #endfor 
-                
+#enddef
+
+#the main function
+if __name__ == "__main__":
+    folder_name = "c:/study3/data4/note"
+    
+    if (len(sys.argv) > 1):
+        folder_name = sys.argv[1]
+    aggr_main_function(folder_name)       
 #endif for main

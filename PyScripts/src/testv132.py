@@ -1,6 +1,7 @@
 import csv
 import math
 import os
+import sys
 import json
 
 #converts data received from SystemLog into csv files
@@ -29,10 +30,8 @@ def print16time(last_hour,last_minute,i):
     return formatno(last_hour,2)+":"+formatno(last_minute%60,2)+":"+formatno(last_second%60000,5)
 #enddef
     
-
-#the main function
-if __name__ == "__main__":
-    os.chdir("F:/Study2/data3-emm")
+def test_main_function(folder_name):
+    os.chdir(folder_name)
     listing = os.listdir(os.getcwd())
     listing.sort();
     
@@ -88,7 +87,9 @@ if __name__ == "__main__":
                 
                 if(part==0):
                     if(len(feature_nop)>0 and len(feature_rse)>0 and len(feature_pv)>0):
-                        opfilename = "o"+last_date+"-"+last_hour+""+last_minute
+                        if (os.path.isdir('data') == 0):
+                            os.makedirs('data')
+                        opfilename = "data/o"+last_date+"-"+last_hour+""+last_minute
                         outfile = open(opfilename+".csv", "w")
                         temp_second=0
                         
@@ -160,6 +161,14 @@ if __name__ == "__main__":
         outfile.close()
         print "file created:"+opfilename
     #endif
+#enddef
+
+#the main function
+if __name__ == "__main__":
+    folder_name = "c:/study3/data4/note"
     
+    if (len(sys.argv) > 1):
+        folder_name = sys.argv[1]
+    test_main_function(folder_name)    
 #endif
 
