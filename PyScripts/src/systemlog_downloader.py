@@ -25,7 +25,7 @@ if (os.path.isdir(path) == 0):
 os.chdir(path)
 
 
-for index in range(1,15):
+for index in range(1,16):
     
     sday=index
     smonth='Jun'
