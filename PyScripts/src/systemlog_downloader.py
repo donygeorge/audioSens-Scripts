@@ -69,7 +69,12 @@ for index in range(1,16):
         opfilename=name+'/'+name+'-'+formatno(syear,4)+'-'+formatno(smonth_no,2)+'-'+formatno(sday,2)+'.txt'
         outfile = open(opfilename, "w")
         
+        init_bytes=-1
+        if os.path.exists(opfilename):
+            init_bytes = os.path.getsize(opfilename)/1000
         print("Getting data for "+name+"...")
+
+        
         
         #get url opener
         cj = cookielib.CookieJar()
@@ -93,13 +98,16 @@ for index in range(1,16):
         outfile.flush()
         outfile.close()
         no_of_bytes = os.path.getsize(opfilename)
-        no_of_bytes = no_of_bytes/1000
+        no_of_bytes = no_of_bytes
         
         outrow = [row[0]]
         outrow.extend([row[1]])
-        outrow.extend([str(no_of_bytes)])
+        outrow.extend([str(no_of_bytes/1000)])
         log.writerow(outrow)
-        print("Received "+str(no_of_bytes)+" KB of data for "+name+".")
+        if init_bytes == -1:
+            print("Received "+str(no_of_bytes/1000)+" KB of NEW data for "+name+".")
+        elif init_bytes != no_of_bytes:
+            print("Received "+str(no_of_bytes)+" B of NEW data for "+name+" in comparison to "+str(init_bytes))
     #end imei for
     print("\n Compeleted successfully for day "+str(sday))
 #end day for
