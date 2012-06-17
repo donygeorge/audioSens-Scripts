@@ -70,7 +70,7 @@ for index in range(1,16):
         outfile = open(opfilename, "w")
         
         init_bytes=-1
-        if os.path.exists(opfilename):
+        if os.path.exists(path+'/'+opfilename):
             init_bytes = os.path.getsize(opfilename)/1000
         print("Getting data for "+name+"...")
 
