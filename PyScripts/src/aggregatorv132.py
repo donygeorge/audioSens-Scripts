@@ -22,10 +22,11 @@ def formatno(no,length):
 
 
 def aggr_main_function(folder_name):
-    #if (os.path.isdir(folder_name+"/data") ==0):
-    #    return
-    #os.chdir(folder_name+'/data')
-    os.chdir(folder_name)#temp
+    if (os.path.isdir(folder_name+"/data") ==0):
+        print("skipping!!!!!!!!!!!!!!!!!!")
+        return
+    os.chdir(folder_name+'/data')
+    #os.chdir(folder_name)#temp
     listing = os.listdir(os.getcwd())
     listing.sort();
     outfile = open("aggregate.csv", "wb")

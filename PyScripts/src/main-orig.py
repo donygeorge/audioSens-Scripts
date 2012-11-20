@@ -7,6 +7,7 @@ import testv132
 import voiceClassifier132
 import aggregatorv132
 import aggregatormulti132
+import originalv132
 
 def formatno(no,length):
     i=0
@@ -41,8 +42,7 @@ if __name__ == "__main__":
             for infile1 in listing1:
                 #infile0 = 'note' #temp
                 if (os.path.isdir(folder_name+"/"+infile0+"/multi/"+infile1) !=0):
-                    aggregatorv132.aggr_main_function(folder_name+"/"+infile0+"/multi/"+infile1)
-                    aggregatormulti132.aggr2_main_function(folder_name+"/"+infile0+"/multi/"+infile1)
+                    originalv132.orig_main_function(folder_name+"/"+infile0+"/multi/"+infile1)
                     os.chdir(folder_name+"/"+infile0+"/multi")
                     
             os.chdir(folder_name)  

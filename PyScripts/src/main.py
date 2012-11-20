@@ -7,6 +7,7 @@ import testv132
 import voiceClassifier132
 import aggregatorv132
 import aggregatormulti132
+import fileSeparator
 
 def formatno(no,length):
     i=0
@@ -26,7 +27,7 @@ def formatno(no,length):
 
 #the main function
 if __name__ == "__main__":
-    folder_name ='c:/study3/data4/'
+    folder_name ='f:/data5/'
     os.chdir(folder_name) 
     listing0 = os.listdir(os.getcwd())
     listing0.sort();
@@ -35,11 +36,13 @@ if __name__ == "__main__":
         #infile0 = 'note' #temp
         if (os.path.isdir(infile0) !=0):
             print("reading: " + infile0)
-            testv132.test_main_function(folder_name+infile0) 
-            voiceClassifier132.vc_main_function(folder_name+infile0) 
+            #testv132.test_main_function(folder_name+infile0) 
+            #voiceClassifier132.vc_main_function(folder_name+infile0) 
             aggregatorv132.aggr_main_function(folder_name+infile0)
             aggregatormulti132.aggr2_main_function(folder_name+infile0)
+            #fileSeparator.filesep_main_function(folder_name+infile0)
             os.chdir(folder_name)  
+            #break
         #endif folder
         #break #temp
     #end for  folder 
