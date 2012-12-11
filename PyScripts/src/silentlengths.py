@@ -26,11 +26,11 @@ if __name__ == "__main__":
     listing.sort();
     
     speech_threshold =20
-    speech_length = 5
+    speech_length = 60
     
     for infile in listing:
         f = open(os.getcwd()+"/data/"+infile+"/aggregate.csv", "r")
-        outfile = open(os.getcwd()+"/derived/silentlengths/"+infile+".csv", "wb")
+        outfile = open(os.getcwd()+"/derived/silentlengths/"+str(speech_length)+"/"+infile+".csv", "wb")
         wr = csv.writer(outfile, delimiter=',',quoting=csv.QUOTE_MINIMAL)
     
         reader = csv.reader(f)
