@@ -2,6 +2,7 @@ import csv
 import math
 import os
 import json
+import scipy
 
 def formatno(no,length):
     i=0
